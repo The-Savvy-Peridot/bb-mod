@@ -1062,10 +1062,10 @@ class PlayState extends MusicBeatState
 								add(cut3);
 								new FlxTimer().start(1, function(dialogue:FlxTimer)
 								{	
-									remove(cut3);
 									if (dialogueBox != null)
 									{
 										inCutscene = true;
+										remove(cut3);
 										add(dialogueBox);
 									}
 									else
@@ -1081,11 +1081,11 @@ class PlayState extends MusicBeatState
 					remove(black);
 					new FlxTimer().start(1.5, function(dialogue2:FlxTimer)
 					{	
-						remove(cut3);
 						if (dialogueBox != null)
 						{
 							inCutscene = true;
-							add(dialogueBox);
+							remove(cut3);
+							add(dialogueBox);							
 						}
 						else
 							startCountdown();
@@ -1119,10 +1119,10 @@ class PlayState extends MusicBeatState
 						remove(black);
 						new FlxTimer().start(1.5, function(dialogue2:FlxTimer)
 						{	
-							remove(cut3);
 							if (dialogueBox != null)
 							{
 								inCutscene = true;
+								remove(cut3);
 								add(dialogueBox);
 							}
 							else
