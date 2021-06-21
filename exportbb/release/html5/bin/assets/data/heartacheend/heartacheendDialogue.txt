@@ -1,0 +1,86 @@
+:musicloop:dialogue/dialoguemusic
+:bg:cutscenes/aftermath0
+:soundoverwrite:dialogVoice/end/1
+:bb-4:F-fuckin shit... hate.. that it hiccups now..
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/2
+:bb-4:I gotta sit down, bro. Come and sit by me...
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/3
+:bb-4:in case.. you know, you can call your girl's dad if shit hits the fan.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/4
+:bb-4:But- I think I should be okay.
+:soundoverwritestop:
+:enableTypeSound:
+:bf-3:...beep..?
+:disableTypeSound:
+:enableTypeSound:
+:blank:5 Minutes Later..
+:disableTypeSound:
+:bg:cutscenes/aftermath1
+:soundoverwrite:dialogVoice/end/5
+:bb-5:Alright, man... I think we're in the clear.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/6
+:bb-5:I'm feeling a bit better.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/7
+:bb-5:Sorry to give you a scare there, bro.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/8
+:bb-5:That night was scary... you know how bad it messed us up.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/9
+:bb-5:Y'know, I thought you weren't ever gonna visit-
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/10
+:bb-5:part of me thought you were gonna be too..
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/11
+:bb-5:'busy' with your babe.. heh.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/12
+:bb-5:Thanks for making some time just for me, man. Like the old times..
+:soundoverwritestop:
+:enableTypeSound:
+:bf-5:..beep bop.
+:disableTypeSound:
+:soundoverwrite:dialogVoice/end/13
+:bb-5:Course, bro- I'll take it easy. I promise. Now c'mere, little man.
+:soundoverwritestop:
+:bg:cutscenes/aftermath2
+:soundoverwrite:dialogVoice/end/14
+:bb-5:..I love you, Keith.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/15
+:bb-5:Even if I don't say it often,
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/16
+:bb-5:you know damn well that if shit hits the fan-
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/17
+:bb-5:I'll always be right at your side.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/18
+:bb-5:..cause that's what family's for.
+:soundoverwritestop:
+:enableTypeSound:
+:bf-5:..be op bee
+:disableTypeSound:
+:soundoverwrite:dialogVoice/end/19
+:bb-5:It's getting late.. we should start heading home.
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/20
+:bb-5:See you later, bro... and hey-
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/21
+:bb-5:Maybe we can have a rematch sometime...
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/22
+:bb-5:and see who really is the better singer.. heh!
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/end/23
+:bg:cutscenes/aftermath3
+:bb-5:Night, man.
+:soundoverwritestop:

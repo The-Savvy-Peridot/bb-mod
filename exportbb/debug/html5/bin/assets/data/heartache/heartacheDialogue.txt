@@ -1,0 +1,39 @@
+:musicloop:dialogue/dialoguemusic
+:bg:cutscenes/intro1-3
+:soundoverwrite:dialogVoice/hea/1
+:bb-4:M-mph... shit-
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/hea/2
+:bb-4:Shit. You gotta... be... shittin' me...
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/hea/3
+:bb-4:Really..? Now?
+:soundoverwritestop:
+:sound:bfText
+:enableTypeSound:
+:bf-4:Beep!?
+:disableTypeSound:
+:soundoverwrite:dialogVoice/hea/4
+:bb-4:A-ah.. it's not that bad, m-man...
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/hea/5
+:bb-4:Maybe it'll stop in a bit..?
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/hea/6
+:bb-4:I still got- ugh.. plenty of oomph in me-
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/hea/7
+:bb-4:Let's do one more song, alright?
+:soundoverwritestop:
+:enableTypeSound:
+:bf-4:...
+:disableTypeSound:
+:soundoverwrite:dialogVoice/hea/8
+:bb-4:I promise, bro-
+:soundoverwritestop:
+:soundoverwrite:dialogVoice/hea/9
+:bb-4:If it gets to where I can't take any more, I'll tap out...
+:soundoverwritestop:
+:enableTypeSound:
+:bf-3:...beep..
+:disableTypeSound:
