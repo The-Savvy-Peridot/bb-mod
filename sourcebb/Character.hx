@@ -192,7 +192,7 @@ class Character extends FlxSprite
 			case 'bb-youwin':
 				frames = Paths.getSparrowAtlas('bb/Youwinlipsync');
 				animation.addByPrefix('tapout', '00', 20, false);
-
+				addOffset('tapout');
 				playAnim('tapout');
 
 			case 'bf-playablebb-lipsync':
