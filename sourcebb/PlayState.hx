@@ -1936,7 +1936,7 @@ class PlayState extends MusicBeatState
 							dad = new Character(100, 100, 'bb-tired');
 							add(dad);
 	
-						case 162:
+						case 160:
 							remove(dad);
 							dad = new Character(100, 100, 'bb-youwin');
 							add(dad);

@@ -190,8 +190,8 @@ class Character extends FlxSprite
 				playAnim('nicebars');
 				playAnim('heythatsit');
 			case 'bb-youwin':
-				frames = Paths.getSparrowAtlas('bb/Youwinlipsync');
-				animation.addByPrefix('tapout', '00', 20, false);
+				frames = Paths.getSparrowAtlas('bb/youwin');
+				animation.addByPrefix('tapout', 'v', 9, false);
 				addOffset('tapout');
 				playAnim('tapout');
 
