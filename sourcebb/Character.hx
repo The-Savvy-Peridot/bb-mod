@@ -191,7 +191,8 @@ class Character extends FlxSprite
 				playAnim('heythatsit');
 			case 'bb-youwin':
 				frames = Paths.getSparrowAtlas('bb/youwin');
-				animation.addByPrefix('tapout', 'v', 9, false);
+				animation.addByPrefix('tapout', 'v', 8, false);
+				// not exactly sure what framerate the animation is in. tweak the num before the false to fine tune the speed
 				addOffset('tapout');
 				playAnim('tapout');
 
