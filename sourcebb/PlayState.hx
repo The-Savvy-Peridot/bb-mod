@@ -2066,7 +2066,18 @@ class PlayState extends MusicBeatState
 				{
 					if (daNote.tooLate || !daNote.wasGoodHit)
 					{
-						health -= 0.0950;
+						if (storyDifficulty == 2)
+						{
+							health -= 0.0950;
+						}
+						else if (storyDifficulty == 1)
+						{
+							health -= 0.0475;
+						}
+						else if (storyDifficulty == 0)
+						{
+							health -= 0.0225;
+						}
 						vocals.volume = 0;
 					}
 
@@ -2534,6 +2545,18 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned)
 		{
+			if (storyDifficulty == 2)
+				{
+					health -= 0.08;
+				}
+				else if (storyDifficulty == 1)
+				{
+					health -= 0.04;
+				}
+				else if (storyDifficulty == 0)
+				{
+					health -= 0.02;
+				}
 			health -= 0.08;
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
@@ -2610,9 +2633,20 @@ class PlayState extends MusicBeatState
 			if (SONG.song.toLowerCase() == 'familial-bonds' || SONG.song.toLowerCase() == 'always-here' || SONG.song.toLowerCase() == 'memories' || SONG.song.toLowerCase() == 'heartache')
 			{
 				if (note.noteData >= 0)
-					health += 0.010;
+					if (storyDifficulty == 2)
+						{
+							health += 0.010;
+						}
+						else if (storyDifficulty == 1)
+						{
+							health += 0.050;
+						}
+						else if (storyDifficulty == 0)
+						{
+							health += 0.1;
+						}
 				else
-					health += 0.002;
+					health += 0.020;
 			}
 			else
 				if (note.noteData >= 0)
