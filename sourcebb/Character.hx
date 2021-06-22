@@ -684,7 +684,7 @@ class Character extends FlxSprite
 				flipX = true;
 			case 'bf-bb-dead':
 				frames = Paths.getSparrowAtlas('bb/playablebb');
-				animation.addByPrefix('firstDeath', "BB dies", 24, false);
+				animation.addByPrefix('firstDeath', "BB dies", 12, false);
 				animation.addByPrefix('deathLoop', "BB Dead Loop", 24, true);
 				animation.addByPrefix('deathConfirm', "BB Dead confirm", 24, false);
 				animation.play('firstDeath');

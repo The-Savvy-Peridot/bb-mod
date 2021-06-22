@@ -341,12 +341,6 @@
 	<SubTexture name="BB dies0013" x="9605" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB dies0014" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB dies0015" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0016" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0017" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0018" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0019" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0020" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0021" x="10170" y="1768" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB dies0022" x="5085" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB dies0023" x="5650" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB dies0024"  x="6215" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
@@ -366,23 +360,6 @@
 	<SubTexture name="BB dies0038" x="14125" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB dies0039" x="14690" y="884" width="565" height="884" frameX="0" frameY="" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB dies0040" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0041" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0042" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0043" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0044" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0045" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0046" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0047" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0048" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0049" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0050" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0051" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0052" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0053" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0054" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0055" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0056" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
-	<SubTexture name="BB dies0057" x="15255" y="884" width="565" height="884" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB idle dance0000"  x="0" y="0" width="553" height="863" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB idle dance0001"  x="0" y="0" width="553" height="863" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
 	<SubTexture name="BB idle dance0002" x="553" y="0" width="553" height="863" frameX="0" frameY="0" frameWidth="565" frameHeight="887"/>
