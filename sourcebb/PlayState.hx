@@ -2064,22 +2064,83 @@ class PlayState extends MusicBeatState
 
 				if (daNote.y < -daNote.height)
 				{
-					if (daNote.tooLate || !daNote.wasGoodHit)
+					if (storyWeek == 7 && SONG.song.toLowerCase()!= 'familial-bonds')
 					{
-						if (storyDifficulty == 2)
-						{
-							health -= 0.0950;
-						}
-						else if (storyDifficulty == 1)
-						{
-							health -= 0.0475;
-						}
-						else if (storyDifficulty == 0)
-						{
-							health -= 0.0225;
-						}
-						vocals.volume = 0;
+						if (daNote.tooLate || !daNote.wasGoodHit)
+							{
+								if (daNote.isSustainNote)
+								{
+									if (storyDifficulty == 2)
+										{
+											health -= 0.0475;
+										}
+										else if (storyDifficulty == 1)
+										{
+											health -= 0.0225;
+										}
+										else if (storyDifficulty == 0)
+										{
+											health -= 0.0110;
+										}
+										vocals.volume = 0;
+								}
+								else if (!daNote.isSustainNote)
+								{
+									if (storyDifficulty == 2)
+										{
+											health -= 0.0950;
+										}
+										else if (storyDifficulty == 1)
+										{
+											health -= 0.0475;
+										}
+										else if (storyDifficulty == 0)
+										{
+											health -= 0.0225;
+										}
+										vocals.volume = 0;
+								}
+							}
 					}
+					else if (SONG.song.toLowerCase() == 'familial-bonds')
+					{
+						if (!daNote.isSustainNote)
+						{
+							if (daNote.tooLate || !daNote.wasGoodHit)
+								{
+									if (storyDifficulty == 2)
+									{
+										health -= 0.0950;
+									}
+									else if (storyDifficulty == 1)
+									{
+										health -= 0.0475;
+									}
+									else if (storyDifficulty == 0)
+									{
+										health -= 0.0225;
+									}
+									vocals.volume = 0;
+								}
+						}
+					}
+					else
+						if (daNote.tooLate || !daNote.wasGoodHit)
+							{
+								if (storyDifficulty == 2)
+								{
+									health -= 0.0475;
+								}
+								else if (storyDifficulty == 1)
+								{
+									health -= 0.0235;
+								}
+								else if (storyDifficulty == 0)
+								{
+									health -= 0.0110;
+								}
+								vocals.volume = 0;
+							}
 
 					daNote.active = false;
 					daNote.visible = false;
@@ -2087,7 +2148,7 @@ class PlayState extends MusicBeatState
 					daNote.kill();
 					notes.remove(daNote, true);
 					daNote.destroy();
-				}
+				}	
 			});
 		}
 
