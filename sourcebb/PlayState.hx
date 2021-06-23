@@ -1138,6 +1138,7 @@ class PlayState extends MusicBeatState
 		}
 	function coolEnd(?dialogueBox:DialogueBox):Void
 		{
+			Conductor.songPosition = -5000;
 			var aft:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cutscenes/aftermath0'));
 			aft.antialiasing = true;
 			camHUD.visible = false;
