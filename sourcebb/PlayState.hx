@@ -1842,6 +1842,7 @@ class PlayState extends MusicBeatState
                         add(dad);
 
 					case 93:
+						canPause = false;
 						remove(dad);
 						dad = new Character(100, 100, 'bb-lipsync');
 						add(dad);
@@ -1853,9 +1854,11 @@ class PlayState extends MusicBeatState
 							remove(dad);
 							dad = new Character(100, 100, 'bb');
 							add(dad);
+							canPause = true;
 						});
 					
 					case 156:
+						canPause = false;
 						remove(dad);
 						dad = new Character(100, 100, 'bb-lipsync');
 						add(dad);
@@ -1867,6 +1870,7 @@ class PlayState extends MusicBeatState
 							remove(dad);
 							dad = new Character(100, 100, 'bb');
 							add(dad);
+							canPause = true;
 						});
 				}
 			}		
@@ -1884,6 +1888,7 @@ class PlayState extends MusicBeatState
                         add(boyfriend);
 
 					case 31:
+						canPause = false;
 						remove(boyfriend);
 						boyfriend = new Boyfriend(800, 100, 'bf-playablebb-lipsync');
 						add(boyfriend);
@@ -1895,8 +1900,10 @@ class PlayState extends MusicBeatState
 							remove(boyfriend);
 							boyfriend = new Boyfriend(800, 100, 'bf-playablebb');
 							add(boyfriend);
+							canPause = true;
 						});
 					case 127:
+						canPause = false;
 						remove(boyfriend);
 						boyfriend = new Boyfriend(800, 100, 'bf-playablebb-lipsync');
 						add(boyfriend);
@@ -1908,8 +1915,10 @@ class PlayState extends MusicBeatState
 							remove(boyfriend);
 							boyfriend = new Boyfriend(800, 100, 'bf-playablebb');
 							add(boyfriend);
+							canPause = true;
 						});
 					case 272:
+						canPause = false;
 						remove(boyfriend);
 						boyfriend = new Boyfriend(800, 100, 'bf-playablebb-lipsync');
 						add(boyfriend);
@@ -1921,6 +1930,7 @@ class PlayState extends MusicBeatState
 							remove(boyfriend);
 							boyfriend = new Boyfriend(800, 100, 'bf-playablebb');
 							add(boyfriend);
+							canPause = true;
 						});
 				}
 			}
@@ -1937,10 +1947,12 @@ class PlayState extends MusicBeatState
 							add(dad);
 	
 						case 159:
+							canPause = false;
 							remove(dad);
 							dad = new Character(100, 100, 'bb-youwin');
 							add(dad);
 							dad.playAnim('tapout', true);
+							canPause = true;
 					}
 				}
 		// better streaming of shit
