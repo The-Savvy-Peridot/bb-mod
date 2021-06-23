@@ -10,7 +10,7 @@
 :bb-4:in case.. you know, you can call your girl's dad if shit hits the fan.
 :soundoverwritestop:
 :soundoverwrite:dialogVoice/end/4
-:bb-4:But- I think I should be okay.
+:bb-4:But- I think it should be okay.
 :soundoverwritestop:
 :enableTypeSound:
 :bf-3:...beep..?

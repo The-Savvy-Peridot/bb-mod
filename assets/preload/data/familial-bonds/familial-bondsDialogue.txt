@@ -8,7 +8,7 @@
 :bb-1:Well look who it is, little man Keith! How's it going, bro?
 :soundoverwritestop:
 :soundoverwrite:dialogVoice/fam/2
-:bb-2:Still with that redheaded wonder I keep hearing about?
+:bb-2:Still with the redhead wonder I keep hearing about?
 :soundoverwritestop:
 :soundoverwrite:dialogVoice/fam/3
 :bb-3:Or...
@@ -37,7 +37,7 @@
 :bb-2:A rap battle, huh? Shit... last time we did that, I literally got killed.
 :soundoverwritestop:
 :soundoverwrite:dialogVoice/fam/9
-:bb-1:Hell, my heart still has it's hiccups from that night.
+:bb-1:Hell, my heart still has its hiccups from that night.
 :soundoverwritestop:
 :sound:bfText
 :enableTypeSound:
