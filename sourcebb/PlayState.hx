@@ -700,6 +700,9 @@ class PlayState extends MusicBeatState
 				camPos.x += 400;
 			case 'bb':
 				camPos.x += 400;
+				dad.y -= 45;
+			case 'bf-vs':
+				dad.y -= 20;
 			case 'playablebb':
 				dad.y += 400;
 				camPos.x += 400;
@@ -1835,16 +1838,16 @@ class PlayState extends MusicBeatState
 				{
 					case -4:
                         remove(dad);
-                        dad= new Character(100, 100, 'bb-lipsync');
+                        dad= new Character(100, 40, 'bb-lipsync');
                         add(dad);
                         remove(dad);
-                        dad = new Character(100, 100, 'bb');
+                        dad = new Character(100, 40, 'bb');
                         add(dad);
 
 					case 93:
 						canPause = false;
 						remove(dad);
-						dad = new Character(100, 100, 'bb-lipsync');
+						dad = new Character(100, 40, 'bb-lipsync');
 						add(dad);
 						dad.playAnim('nicebars', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1852,7 +1855,7 @@ class PlayState extends MusicBeatState
 						{
 							dad.playAnim('idle', true);
 							remove(dad);
-							dad = new Character(100, 100, 'bb');
+							dad = new Character(100, 40, 'bb');
 							add(dad);
 							canPause = true;
 						});
@@ -1860,7 +1863,7 @@ class PlayState extends MusicBeatState
 					case 156:
 						canPause = false;
 						remove(dad);
-						dad = new Character(100, 100, 'bb-lipsync');
+						dad = new Character(100, 40, 'bb-lipsync');
 						add(dad);
 						dad.playAnim('heythatsit', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1868,7 +1871,7 @@ class PlayState extends MusicBeatState
 						{
 							dad.playAnim('idle', true);
 							remove(dad);
-							dad = new Character(100, 100, 'bb');
+							dad = new Character(100, 40, 'bb');
 							add(dad);
 							canPause = true;
 						});
@@ -1881,16 +1884,16 @@ class PlayState extends MusicBeatState
 				{
 					case -4:
                         remove(boyfriend);
-                        boyfriend = new Boyfriend(800, 100, 'bf-playablebb-lipsync');
+                        boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
                         add(boyfriend);
                         remove(boyfriend);
-                        boyfriend = new Boyfriend(800, 100, 'bf-playablebb');
+                        boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
                         add(boyfriend);
 
 					case 31:
 						canPause = false;
 						remove(boyfriend);
-						boyfriend = new Boyfriend(800, 100, 'bf-playablebb-lipsync');
+						boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
 						add(boyfriend);
 						boyfriend.playAnim('notbad', true);
 						new FlxTimer().start(1.0, function(tmr:FlxTimer)
@@ -1898,14 +1901,14 @@ class PlayState extends MusicBeatState
 						{
 							boyfriend.playAnim('idle', true);
 							remove(boyfriend);
-							boyfriend = new Boyfriend(800, 100, 'bf-playablebb');
+							boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
 							add(boyfriend);
 							canPause = true;
 						});
 					case 127:
 						canPause = false;
 						remove(boyfriend);
-						boyfriend = new Boyfriend(800, 100, 'bf-playablebb-lipsync');
+						boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
 						add(boyfriend);
 						boyfriend.playAnim('shitnice', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1913,14 +1916,14 @@ class PlayState extends MusicBeatState
 						{
 							boyfriend.playAnim('idle', true);
 							remove(boyfriend);
-							boyfriend = new Boyfriend(800, 100, 'bf-playablebb');
+							boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
 							add(boyfriend);
 							canPause = true;
 						});
 					case 272:
 						canPause = false;
 						remove(boyfriend);
-						boyfriend = new Boyfriend(800, 100, 'bf-playablebb-lipsync');
+						boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
 						add(boyfriend);
 						boyfriend.playAnim('sweet', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1928,7 +1931,7 @@ class PlayState extends MusicBeatState
 						{
 							boyfriend.playAnim('idle', true);
 							remove(boyfriend);
-							boyfriend = new Boyfriend(800, 100, 'bf-playablebb');
+							boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
 							add(boyfriend);
 							canPause = true;
 						});
@@ -1940,16 +1943,16 @@ class PlayState extends MusicBeatState
 					{
 						case -4:
 							remove(dad);
-							dad= new Character(100, 100, 'bb-youwin');
+							dad= new Character(100, 40, 'bb-youwin');
 							add(dad);
 							remove(dad);
-							dad = new Character(100, 100, 'bb-tired');
+							dad = new Character(100, 40, 'bb-tired');
 							add(dad);
 	
 						case 159:
 							canPause = false;
 							remove(dad);
-							dad = new Character(100, 100, 'bb-youwin');
+							dad = new Character(100, 40, 'bb-youwin');
 							add(dad);
 							dad.playAnim('tapout', true);
 							canPause = true;
