@@ -21,8 +21,8 @@ class OutdatedSubState extends MusicBeatState
 		add(bg);
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
 			"HEY!\nThis mod runs in fullscreen by default."
-			+ "\nif you want to play in windowed, press ALT+ENTER"
-			+ "\nor you can use ALT+F4 to close the game."
+			+ "\nIf you want to play in windowed, press ALT+ENTER,"
+			+ "\nor if you want to close the game, press ALT+F4."
 			+ "\nClose this menu with Space or Escape.",
 			32);
 		txt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
