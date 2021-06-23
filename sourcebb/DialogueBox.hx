@@ -280,17 +280,6 @@ class DialogueBox extends FlxSpriteGroup
 			swagDialogue.color = 0xFF000000;
 			swagDialogue.sounds = [FlxG.sound.load(Paths.sound('bbText'), 0.6)];
 		}
-		else
-		{
-			dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 48);
-			dropText.font = 'Friday Funkin';
-			dropText.color = 0xFFD89494;
-			add(dropText);
-			swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 48);
-			swagDialogue.font = 'Friday Funkin';
-			swagDialogue.color = 0xFF3F2021;
-			swagDialogue.sounds = [FlxG.sound.load(Paths.sound('bfText'), 0.6)];
-		}
 		
 		add(swagDialogue);
 
