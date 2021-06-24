@@ -2179,7 +2179,12 @@ class PlayState extends MusicBeatState
 
 	function waveBye():Void
 	{
+		#if html5
 		var bye:FlxSprite = new FlxSprite(168, 189).loadGraphic(Paths.image('cutscenes/aftermath3'));
+		#end
+		#if desktop
+		var bye:FlxSprite = new FlxSprite(189, 189).loadGraphic(Paths.image('cutscenes/aftermath3'));
+		#end
 			bye.antialiasing = true;
 			camHUD.visible = false;
 			add(bye);
