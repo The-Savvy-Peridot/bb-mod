@@ -699,7 +699,6 @@ class PlayState extends MusicBeatState
 			case 'dad':
 				camPos.x += 400;
 			case 'bb':
-				camPos.x += 400;
 				dad.y -= 45;
 			case 'bf-vs':
 				dad.y -= 20;
@@ -707,7 +706,8 @@ class PlayState extends MusicBeatState
 				dad.y += 400;
 				camPos.x += 400;
 			case 'bb-lipsync':
-				camPos.x += 400;
+				camPos.x += 500;
+				camPos.y += 100;
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
@@ -732,8 +732,13 @@ class PlayState extends MusicBeatState
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
+			case 'prologue':
+				dad.y += 50;
+				dad.x += 100;
+				boyfriend.y += 80;
 			case 'always-here':
-				dad.y += 400;
+				dad.y += 430;
+				dad.x += 50;
 				boyfriend.y -= 400;
 			case 'limo':
 				boyfriend.y -= 220;
@@ -1849,16 +1854,16 @@ class PlayState extends MusicBeatState
 				{
 					case -4:
                         remove(dad);
-                        dad= new Character(100, 40, 'bb-lipsync');
+                        dad= new Character(150, 70, 'bb-lipsync');
                         add(dad);
                         remove(dad);
-                        dad = new Character(100, 40, 'bb');
+                        dad = new Character(150, 70, 'bb');
                         add(dad);
 
 					case 93:
 						canPause = false;
 						remove(dad);
-						dad = new Character(100, 40, 'bb-lipsync');
+						dad = new Character(150, 70, 'bb-lipsync');
 						add(dad);
 						dad.playAnim('nicebars', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1866,7 +1871,7 @@ class PlayState extends MusicBeatState
 						{
 							dad.playAnim('idle', true);
 							remove(dad);
-							dad = new Character(100, 40, 'bb');
+							dad = new Character(150, 70, 'bb');
 							add(dad);
 							canPause = true;
 						});
@@ -1874,7 +1879,7 @@ class PlayState extends MusicBeatState
 					case 156:
 						canPause = false;
 						remove(dad);
-						dad = new Character(100, 40, 'bb-lipsync');
+						dad = new Character(150, 70, 'bb-lipsync');
 						add(dad);
 						dad.playAnim('heythatsit', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1882,7 +1887,7 @@ class PlayState extends MusicBeatState
 						{
 							dad.playAnim('idle', true);
 							remove(dad);
-							dad = new Character(100, 40, 'bb');
+							dad = new Character(150, 70, 'bb');
 							add(dad);
 							canPause = true;
 						});
@@ -1895,16 +1900,16 @@ class PlayState extends MusicBeatState
 				{
 					case -4:
                         remove(boyfriend);
-                        boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
+                        boyfriend = new Boyfriend(800, 70, 'bf-playablebb-lipsync');
                         add(boyfriend);
                         remove(boyfriend);
-                        boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
+                        boyfriend = new Boyfriend(800, 70, 'bf-playablebb');
                         add(boyfriend);
 
 					case 31:
 						canPause = false;
 						remove(boyfriend);
-						boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
+						boyfriend = new Boyfriend(800, 70, 'bf-playablebb-lipsync');
 						add(boyfriend);
 						boyfriend.playAnim('notbad', true);
 						new FlxTimer().start(1.0, function(tmr:FlxTimer)
@@ -1912,14 +1917,14 @@ class PlayState extends MusicBeatState
 						{
 							boyfriend.playAnim('idle', true);
 							remove(boyfriend);
-							boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
+							boyfriend = new Boyfriend(800, 70, 'bf-playablebb');
 							add(boyfriend);
 							canPause = true;
 						});
 					case 127:
 						canPause = false;
 						remove(boyfriend);
-						boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
+						boyfriend = new Boyfriend(800, 70, 'bf-playablebb-lipsync');
 						add(boyfriend);
 						boyfriend.playAnim('shitnice', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1927,14 +1932,14 @@ class PlayState extends MusicBeatState
 						{
 							boyfriend.playAnim('idle', true);
 							remove(boyfriend);
-							boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
+							boyfriend = new Boyfriend(800, 70, 'bf-playablebb');
 							add(boyfriend);
 							canPause = true;
 						});
 					case 272:
 						canPause = false;
 						remove(boyfriend);
-						boyfriend = new Boyfriend(800, 40, 'bf-playablebb-lipsync');
+						boyfriend = new Boyfriend(800, 70, 'bf-playablebb-lipsync');
 						add(boyfriend);
 						boyfriend.playAnim('sweet', true);
 						new FlxTimer().start(2.1, function(tmr:FlxTimer)
@@ -1942,7 +1947,7 @@ class PlayState extends MusicBeatState
 						{
 							boyfriend.playAnim('idle', true);
 							remove(boyfriend);
-							boyfriend = new Boyfriend(800, 40, 'bf-playablebb');
+							boyfriend = new Boyfriend(800, 70, 'bf-playablebb');
 							add(boyfriend);
 							canPause = true;
 						});
@@ -1954,16 +1959,16 @@ class PlayState extends MusicBeatState
 					{
 						case -4:
 							remove(dad);
-							dad= new Character(100, 40, 'bb-youwin');
+							dad= new Character(150, 70, 'bb-youwin');
 							add(dad);
 							remove(dad);
-							dad = new Character(100, 40, 'bb-tired');
+							dad = new Character(100, 70, 'bb-tired');
 							add(dad);
 	
 						case 159:
 							canPause = false;
 							remove(dad);
-							dad = new Character(100, 40, 'bb-youwin');
+							dad = new Character(150, 70, 'bb-youwin');
 							add(dad);
 							dad.playAnim('tapout', true);
 							canPause = true;
@@ -2649,7 +2654,6 @@ class PlayState extends MusicBeatState
 				{
 					health -= 0.02;
 				}
-			health -= 0.08;
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
 				gf.playAnim('sad');
@@ -2727,22 +2731,22 @@ class PlayState extends MusicBeatState
 				if (note.noteData >= 0)
 					if (storyDifficulty == 2)
 						{
-							health += 0.010;
+							health += 0.05;
 						}
 						else if (storyDifficulty == 1)
 						{
-							health += 0.050;
+							health += 0.1;
 						}
 						else if (storyDifficulty == 0)
 						{
-							health += 0.1;
+							health += 0.2;
 						}
 				else
-					health += 0.020;
+					health += 0.004;
 			}
 			else
 				if (note.noteData >= 0)
-					health += 0.023;
+					health += 0.04;
 				else
 					health += 0.004;
 
