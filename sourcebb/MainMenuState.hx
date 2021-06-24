@@ -52,18 +52,18 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 		if (FlxG.random.bool(10))
 		{
-			var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBGalt'));
+			var bg:FlxSprite = new FlxSprite(-140).loadGraphic(Paths.image('menuBGalt'));
 			bg.scrollFactor.x = 0;
-			bg.scrollFactor.y = 0.18;
-			bg.setGraphicSize(Std.int(bg.width * 1.1));
+			bg.scrollFactor.y = 0.09;
+			bg.setGraphicSize(Std.int(bg.width * 1.05));
 			bg.updateHitbox();
 			bg.screenCenter();
 			bg.antialiasing = true;
 			add(bg);
-			magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesatalt'));
+			magenta = new FlxSprite(-140).loadGraphic(Paths.image('menuDesatalt'));
 			magenta.scrollFactor.x = 0;
-			magenta.scrollFactor.y = 0.18;
-			magenta.setGraphicSize(Std.int(magenta.width * 1.1));
+			magenta.scrollFactor.y = 0.09;
+			magenta.setGraphicSize(Std.int(magenta.width * 1.01));
 			magenta.updateHitbox();
 			magenta.screenCenter();
 			magenta.visible = false;
@@ -73,18 +73,18 @@ class MainMenuState extends MusicBeatState
 		}
 		else
 		{
-			var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+			var bg:FlxSprite = new FlxSprite(-140).loadGraphic(Paths.image('menuBG'));
 			bg.scrollFactor.x = 0;
-			bg.scrollFactor.y = 0.18;
-			bg.setGraphicSize(Std.int(bg.width * 1.1));
+			bg.scrollFactor.y = 0.09;
+			bg.setGraphicSize(Std.int(bg.width * 1.01));
 			bg.updateHitbox();
 			bg.screenCenter();
 			bg.antialiasing = true;
 			add(bg);
-			magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+			magenta = new FlxSprite(-140).loadGraphic(Paths.image('menuDesat'));
 			magenta.scrollFactor.x = 0;
-			magenta.scrollFactor.y = 0.18;
-			magenta.setGraphicSize(Std.int(magenta.width * 1.1));
+			magenta.scrollFactor.y = 0.09;
+			magenta.setGraphicSize(Std.int(magenta.width * 1.01));
 			magenta.updateHitbox();
 			magenta.screenCenter();
 			magenta.visible = false;
