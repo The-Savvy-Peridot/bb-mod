@@ -2193,7 +2193,7 @@ class PlayState extends MusicBeatState
 		var bye:FlxSprite = new FlxSprite(168, 189).loadGraphic(Paths.image('cutscenes/aftermath3'));
 		#end
 		#if desktop
-		var bye:FlxSprite = new FlxSprite(189, 189).loadGraphic(Paths.image('cutscenes/aftermath3'));
+		var bye:FlxSprite = new FlxSprite(179, 189).loadGraphic(Paths.image('cutscenes/aftermath3'));
 		#end
 			bye.antialiasing = true;
 			camHUD.visible = false;
