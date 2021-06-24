@@ -1034,13 +1034,17 @@ class PlayState extends MusicBeatState
 			cut3.scrollFactor.set();
 			var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 			black.scrollFactor.set();
+			var black2:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+			black2.scrollFactor.set();
 			if (curSong.toLowerCase() == 'familial-bonds')
 			{
+				add(black2);
 				add(cut1);
 				add(black);
 			}
 			else
 			{
+				add(black2);
 				add(cut3);
 				add(black);
 			}
@@ -1069,6 +1073,7 @@ class PlayState extends MusicBeatState
 									{
 										inCutscene = true;
 										remove(cut3);
+										remove(black2);
 										add(dialogueBox);
 									}
 									else
@@ -1088,6 +1093,7 @@ class PlayState extends MusicBeatState
 						{
 							inCutscene = true;
 							remove(cut3);
+							remove(black2);
 							add(dialogueBox);							
 						}
 						else
@@ -1107,6 +1113,9 @@ class PlayState extends MusicBeatState
 				cut3.scrollFactor.set();
 				var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 				black.scrollFactor.set();
+				var black2:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+				black2.scrollFactor.set();
+				add(black2);
 				add(cut3);
 				add(black);
 				new FlxTimer().start(0.3, function(fade:FlxTimer)
@@ -1126,6 +1135,7 @@ class PlayState extends MusicBeatState
 							{
 								inCutscene = true;
 								remove(cut3);
+								remove(black2);
 								add(dialogueBox);
 							}
 							else
