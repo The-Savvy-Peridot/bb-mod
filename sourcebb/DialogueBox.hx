@@ -210,7 +210,7 @@ class DialogueBox extends FlxSpriteGroup
 			var prefix:String = "dialoguePortraits/";
 			//var shitList:Array<String> = [];
 			var newSprite:FlxSprite = new FlxSprite(box.x, box.y + 75).loadGraphic(Paths.image(prefix + extraCharnames[i]));
-			newSprite.scale.set(1.5, 1.5);
+			newSprite.scale.set(1.2, 1.2);
 			newSprite.antialiasing = true;
 			newSprite.y -= newSprite.height;
 			if (isRight)
@@ -223,12 +223,12 @@ class DialogueBox extends FlxSpriteGroup
 			}
 			if (extraCharnames[i].startsWith('bb'))
 				{
-					newSprite.y -= 100;
+					newSprite.y -= 45;
 					newSprite.x += 60;
 				}
 			if (extraCharnames[i].startsWith('bf'))
 			{
-				newSprite.y -= 90;
+				newSprite.y -= 35;
 				newSprite.x -= 220;
 			}
 			newSprite.updateHitbox();
