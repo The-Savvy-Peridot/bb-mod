@@ -87,7 +87,7 @@ class GameOverSubstate extends MusicBeatSubstate
 					FlxG.sound.play(Paths.soundRandom('bbLines/bbDead/', 1, 8));
 				}
 			}
-			else if (bf.curCharacter == 'bf')
+			else if (bf.curCharacter == 'bf' && PlayState.curStage == 'prologue')
 			{
 				if (FlxG.random.bool(66))
 				{
