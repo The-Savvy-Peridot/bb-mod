@@ -207,6 +207,8 @@ class PlayState extends MusicBeatState
 				storyDifficultyText = "Normal";
 			case 2:
 				storyDifficultyText = "Hard";
+			case 3:
+				storyDifficultyText = 'Fuck...';
 		}
 
 		iconRPC = SONG.player2;
@@ -2113,6 +2115,10 @@ class PlayState extends MusicBeatState
 										{
 											health -= 0.0110;
 										}
+										else if (storyDifficulty == 3)
+										{
+											health -= 4;
+										}
 										vocals.volume = 0;
 								}
 								else if (!daNote.isSustainNote)
@@ -2128,6 +2134,10 @@ class PlayState extends MusicBeatState
 										else if (storyDifficulty == 0)
 										{
 											health -= 0.0225;
+										}
+										else if (storyDifficulty == 3)
+										{
+											health -= 4;
 										}
 										vocals.volume = 0;
 								}
@@ -2151,6 +2161,10 @@ class PlayState extends MusicBeatState
 									{
 										health -= 0.0225;
 									}
+									else if (storyDifficulty == 3)
+									{
+										health -= 4;
+									}
 									vocals.volume = 0;
 								}
 						}
@@ -2169,6 +2183,10 @@ class PlayState extends MusicBeatState
 								else if (storyDifficulty == 0)
 								{
 									health -= 0.0110;
+								}
+								else if (storyDifficulty == 3)
+								{
+									health -= 4;
 								}
 								vocals.volume = 0;
 							}
@@ -2225,8 +2243,12 @@ class PlayState extends MusicBeatState
 		if (isStoryMode)
 		{
 			campaignScore += songScore;
-
-			storyPlaylist.remove(storyPlaylist[0]);
+			if (storyDifficulty != 3)
+			{
+				storyPlaylist.remove(storyPlaylist[0]);
+			}
+			else
+				trace('it workin or somethig');
 
 			if (storyPlaylist.length <= 0)
 			{
@@ -2254,6 +2276,8 @@ class PlayState extends MusicBeatState
 
 				if (storyDifficulty == 2)
 					difficulty = '-hard';
+				if (storyDifficulty == 3)
+					difficulty = '-fuck';
 
 				trace('LOADING NEXT SONG');
 				trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
@@ -2274,7 +2298,23 @@ class PlayState extends MusicBeatState
 				FlxTransitionableState.skipNextTransOut = true;
 				prevCamFollow = camFollow;
 
-				PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
+				if (storyDifficulty == 3)
+					{
+						if (PlayState.SONG == Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]))
+							{
+								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[1].toLowerCase() + difficulty, PlayState.storyPlaylist[1]);
+							}
+						else if (PlayState.SONG == Song.loadFromJson(PlayState.storyPlaylist[1].toLowerCase() + difficulty, PlayState.storyPlaylist[1]))
+							{
+								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[2].toLowerCase() + difficulty, PlayState.storyPlaylist[2]);
+							}
+						else if (PlayState.SONG == Song.loadFromJson(PlayState.storyPlaylist[2].toLowerCase() + difficulty, PlayState.storyPlaylist[2]))
+							{
+								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[3].toLowerCase() + difficulty, PlayState.storyPlaylist[3]);
+							}
+					}
+				else
+					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 				FlxG.sound.music.stop();
 
 				LoadingState.loadAndSwitchState(new PlayState());
@@ -2653,6 +2693,10 @@ class PlayState extends MusicBeatState
 				else if (storyDifficulty == 0)
 				{
 					health -= 0.02;
+				}
+				else if (storyDifficulty == 3)
+				{
+					health -= 4;
 				}
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{

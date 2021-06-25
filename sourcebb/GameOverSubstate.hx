@@ -1,5 +1,6 @@
 package;
 
+import io.newgrounds.objects.Medal.Difficulty;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSubState;
@@ -124,6 +125,11 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				FlxG.camera.fade(FlxColor.BLACK, 2, false, function()
 				{
+					if (PlayState.storyDifficulty == 3)
+						{
+							var difficulty:String = "";
+							PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
+						}
 					LoadingState.loadAndSwitchState(new PlayState());
 				});
 			});
