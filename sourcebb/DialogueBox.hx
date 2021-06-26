@@ -272,11 +272,11 @@ class DialogueBox extends FlxSpriteGroup
 		else if (PlayState.SONG.song.toLowerCase() == 'familial-bonds' || PlayState.SONG.song.toLowerCase() == 'always-here' || PlayState.SONG.song.toLowerCase() == 'memories' || PlayState.SONG.song.toLowerCase() == 'heartache' || PlayState.SONG.song.toLowerCase() == 'heartacheend')
 		{
 			dropText = new FlxText(250, 550, Std.int(FlxG.width * 0.6), "", 48);
-			dropText.font = 'Beatstreet';
+			dropText.font = 'Cool Father';
 			dropText.color = 0xFF000000;
 			add(dropText);
-			swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 48);
-			swagDialogue.font = 'Beatstreet';
+			swagDialogue = new FlxTypeText(240, 470, Std.int(FlxG.width * 0.6), "", 48);
+			swagDialogue.font = 'Cool Father';
 			swagDialogue.color = 0xFF000000;
 			swagDialogue.sounds = [FlxG.sound.load(Paths.sound('bbText'), 0.6)];
 		}
