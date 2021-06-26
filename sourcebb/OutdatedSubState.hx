@@ -19,15 +19,30 @@ class OutdatedSubState extends MusicBeatState
 		super.create();
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
-		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"HEY!\nThis mod runs in fullscreen by default."
-			+ "\nIf you want to play in windowed, press ALT+ENTER,"
-			+ "\nor if you want to close the game, press ALT+F4."
-			+ "\nClose this menu with Space or Escape.",
-			32);
-		txt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
-		txt.screenCenter();
-		add(txt);
+		if (FlxG.random.bool(50))
+		{
+			var txt:FlxText = new FlxText(0, 0, FlxG.width,
+				"HEY!\nThis mod runs in fullscreen by default."
+				+ "\nIf you want to play in windowed, press ALT+ENTER,"
+				+ "\nor if you want to close the game, press ALT+F4."
+				+ "\nClose this menu with Space or Escape.\nPsst... check the difficulties!",
+				32);
+			txt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+			txt.screenCenter();
+			add(txt);
+		}
+		else
+		{
+			var txt:FlxText = new FlxText(0, 0, FlxG.width,
+				"HEY!\nThis mod runs in fullscreen by default."
+				+ "\nIf you want to play in windowed, press ALT+ENTER,"
+				+ "\nor if you want to close the game, press ALT+F4."
+				+ "\nClose this menu with Space or Escape.",
+				32);
+			txt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+			txt.screenCenter();
+			add(txt);
+		}
 	}
 
 	override function update(elapsed:Float)

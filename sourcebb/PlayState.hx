@@ -2297,7 +2297,6 @@ class PlayState extends MusicBeatState
 				FlxTransitionableState.skipNextTransIn = true;
 				FlxTransitionableState.skipNextTransOut = true;
 				prevCamFollow = camFollow;
-
 				if (storyDifficulty == 3)
 					{
 						if (PlayState.SONG == Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]))

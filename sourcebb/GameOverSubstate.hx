@@ -128,7 +128,7 @@ class GameOverSubstate extends MusicBeatSubstate
 					if (PlayState.storyDifficulty == 3)
 						{
 							var difficulty:String = "";
-							PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
+							PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + "-fuck", PlayState.storyPlaylist[0]);
 						}
 					LoadingState.loadAndSwitchState(new PlayState());
 				});

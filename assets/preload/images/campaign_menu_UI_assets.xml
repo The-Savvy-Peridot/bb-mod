@@ -3,26 +3,24 @@
 	<!-- Created with Adobe Animate version 20.0.3.25487 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="EASY0000" x="0" y="0" width="196" height="65"/>
-	<SubTexture name="FUCK0000" x="196" y="0" width="283" height="67"/>
-	<SubTexture name="HARD0000" x="479" y="0" width="211" height="67"/>
-	<SubTexture name="NORMAL0000" x="690" y="0" width="308" height="67"/>
-	<SubTexture name="WEEK1 select0000" x="0" y="67" width="360" height="89"/>
-	<SubTexture name="WEEK1 select0001" x="360" y="67" width="360" height="89"/>
-	<SubTexture name="Week 3 press0000" x="0" y="156" width="358" height="89"/>
-	<SubTexture name="Week 3 press0001" x="358" y="156" width="358" height="89"/>
-	<SubTexture name="Week 4 press0000" x="0" y="245" width="355" height="89"/>
-	<SubTexture name="Week 4 press0001" x="355" y="245" width="355" height="89"/>
-	<SubTexture name="Week 60000" x="0" y="334" width="359" height="92"/>
-	<SubTexture name="Week 60001" x="359" y="334" width="359" height="92"/>
-	<SubTexture name="arrow left0000" x="718" y="334" width="48" height="85"/>
-	<SubTexture name="arrow push left0000" x="766" y="334" width="42" height="75"/>
-	<SubTexture name="arrow push right0000" x="808" y="334" width="41" height="74"/>
-	<SubTexture name="arrow right0000" x="849" y="334" width="47" height="85"/>
-	<SubTexture name="lock0000" x="896" y="334" width="67" height="93"/>
-	<SubTexture name="tutorial selected0000" x="0" y="427" width="443" height="82"/>
-	<SubTexture name="tutorial selected0001" x="443" y="427" width="443" height="82"/>
-	<SubTexture name="week 50000" x="0" y="509" width="364" height="91"/>
-	<SubTexture name="week 50001" x="364" y="509" width="364" height="91"/>
-	<SubTexture name="week2 select0000" x="0" y="600" width="361" height="87"/>
-	<SubTexture name="week2 select0001" x="361" y="600" width="361" height="87"/>
+	<SubTexture name="FUCK0000" x="196" y="0" width="296" height="73"/>
+	<SubTexture name="HARD0000" x="492" y="0" width="211" height="67"/>
+	<SubTexture name="NORMAL0000" x="703" y="0" width="308" height="67"/>
+	<SubTexture name="WEEK1 select0000" x="0" y="73" width="360" height="89"/>
+	<SubTexture name="WEEK1 select0001" x="360" y="73" width="360" height="89"/>
+	<SubTexture name="Week 3 press0000" x="0" y="162" width="358" height="89"/>
+	<SubTexture name="Week 3 press0001" x="358" y="162" width="358" height="89"/>
+	<SubTexture name="Week 4 press0000" x="0" y="251" width="355" height="89"/>
+	<SubTexture name="Week 4 press0001" x="355" y="251" width="355" height="89"/>
+	<SubTexture name="Week 60000" x="0" y="340" width="359" height="92"/>
+	<SubTexture name="Week 60001" x="359" y="340" width="359" height="92"/>
+	<SubTexture name="arrow left0000" x="718" y="340" width="48" height="85"/>
+	<SubTexture name="arrow push left0000" x="766" y="340" width="42" height="75"/>
+	<SubTexture name="arrow push right0000" x="808" y="340" width="41" height="74"/>
+	<SubTexture name="arrow right0000" x="849" y="340" width="47" height="85"/>
+	<SubTexture name="lock0000" x="896" y="340" width="67" height="93"/>
+	<SubTexture name="week 50000" x="0" y="433" width="364" height="91"/>
+	<SubTexture name="week 50001" x="364" y="433" width="364" height="91"/>
+	<SubTexture name="week2 select0000" x="0" y="524" width="361" height="87"/>
+	<SubTexture name="week2 select0001" x="361" y="524" width="361" height="87"/>
 </TextureAtlas>

@@ -363,7 +363,8 @@ class StoryMenuState extends MusicBeatState
 				sprDifficulty.offset.x = 20;
 			case 3:
 				sprDifficulty.animation.play('fuck');
-				sprDifficulty.offset.x = 42;
+				sprDifficulty.offset.x = 66;
+				sprDifficulty.offset.y = 10;
 		}
 
 		sprDifficulty.alpha = 0;
