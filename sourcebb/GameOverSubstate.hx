@@ -85,17 +85,18 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				if (FlxG.random.bool(66))
 				{
-					FlxG.sound.play(Paths.soundRandom('bbLines/bbDead/', 1, 8));
+					FlxG.sound.play(Paths.soundRandom('bbLines/bbDead/', 1, 7));
 				}
 			}
 			else if (bf.curCharacter == 'bf' && PlayState.curStage == 'prologue')
 			{
 				if (FlxG.random.bool(66))
 				{
-					FlxG.sound.play(Paths.soundRandom('bbLines/bbInsults/', 1, 10));
+					FlxG.sound.play(Paths.soundRandom('bbLines/bbInsults/', 1, 9));
 				}
 			}
-			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix), 0.2);
+
 		}
 
 		if (FlxG.sound.music.playing)
