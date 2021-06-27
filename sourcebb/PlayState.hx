@@ -875,7 +875,7 @@ class PlayState extends MusicBeatState
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
 
-		if (isStoryMode)
+		if (isStoryMode && storyDifficulty != 3)
 		{
 			switch (curSong.toLowerCase())
 			{
