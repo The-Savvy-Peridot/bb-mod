@@ -1,5 +1,6 @@
 package;
 
+import js.html.PlaybackDirection;
 import io.newgrounds.objects.Medal.Difficulty;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -10,6 +11,16 @@ import flixel.util.FlxTimer;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
+	var weekData:Array<Dynamic> = [
+		['Tutorial'],
+		['Bopeebo', 'Fresh', 'Dadbattle'],
+		['Spookeez', 'South', "Monster"],
+		['Pico', 'Philly', "Blammed"],
+		['Satin-Panties', "High", "Milf"],
+		['Cocoa', 'Eggnog', 'Winter Horrorland'],
+		['Senpai', 'Roses', 'Thorns'],
+		['Familial-Bonds', 'Always-Here', 'Memories', 'Heartache', 'heartacheend']
+	];
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
 
@@ -128,8 +139,20 @@ class GameOverSubstate extends MusicBeatSubstate
 				{
 					if (PlayState.storyDifficulty == 3)
 						{
-							var difficulty:String = "";
-							PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + "-fuck", PlayState.storyPlaylist[0]);
+							var diffic:String = '-fuck';
+							var week:Int = 0;
+							week = PlayState.storyWeek;
+							var stringThing:Array<String> = weekData[week];
+							PlayState.storyDifficulty = 3;
+
+							PlayState.storyPlaylist = weekData[week];
+							PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+							PlayState.campaignScore = 0;
+							new FlxTimer().start(1, function(tmr:FlxTimer)
+							{
+								LoadingState.loadAndSwitchState(new PlayState(), true);
+							});
+
 						}
 					LoadingState.loadAndSwitchState(new PlayState());
 				});
