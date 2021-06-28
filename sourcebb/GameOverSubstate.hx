@@ -1,8 +1,5 @@
 package;
 
-#if html5
-import js.html.PlaybackDirection;
-#end
 import io.newgrounds.objects.Medal.Difficulty;
 import flixel.FlxG;
 import flixel.FlxObject;
