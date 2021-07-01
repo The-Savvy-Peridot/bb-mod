@@ -136,7 +136,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				FlxG.camera.fade(FlxColor.BLACK, 2, false, function()
 				{
-					if (PlayState.storyDifficulty == 3)
+					if (PlayState.storyDifficulty == 3 && PlayState.isStoryMode)
 						{
 							var diffic:String = '-fuck';
 							var week:Int = 0;
@@ -152,6 +152,10 @@ class GameOverSubstate extends MusicBeatSubstate
 								LoadingState.loadAndSwitchState(new PlayState(), true);
 							});
 
+						}
+					else if (PlayState.storyDifficulty == 3)
+						{
+							PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '-fuck', PlayState.storyPlaylist[0].toLowerCase());
 						}
 					LoadingState.loadAndSwitchState(new PlayState());
 				});

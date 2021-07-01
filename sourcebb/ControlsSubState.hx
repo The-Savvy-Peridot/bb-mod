@@ -2,11 +2,25 @@ package;
 
 import flixel.FlxSprite;
 import flixel.FlxSubState;
-
-class ControlsSubState extends FlxSubState
+import flixel.FlxG;
+import flixel.text.FlxText;
+import flixel.util.FlxColor;
+import lime.app.Application;
+class ControlsSubState extends MusicBeatSubstate
 {
-	public function new()
+	override function create()
 	{
-		super();
+		super.create();
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
+		bg.scale.set(1.1, 1.1);
+		add(bg);
 	}
+	override function update(elapsed:Float)
+		{
+			super.update(elapsed);
+			if (controls.BACK)
+				{
+					FlxG.switchState(new OptionsMenu());
+				}
+		}
 }

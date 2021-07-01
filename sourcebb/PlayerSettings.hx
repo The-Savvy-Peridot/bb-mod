@@ -119,8 +119,16 @@ class PlayerSettings
 	{
 		if (player1 == null)
 		{
-			player1 = new PlayerSettings(0, Solo);
-			++numPlayers;
+			if (Options.dfjk == true)
+			{
+				player1 = new PlayerSettings(0, Dfjk);
+				++numPlayers;
+			}
+			else if (Options.dfjk == false)
+			{
+				player1 = new PlayerSettings(0, Solo);
+				++numPlayers;
+			}
 		}
 
 		var numGamepads = FlxG.gamepads.numActiveGamepads;

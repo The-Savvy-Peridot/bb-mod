@@ -48,6 +48,8 @@ class Note extends FlxSprite
 		this.strumTime = strumTime;
 
 		this.noteData = noteData;
+		if(isSustainNote && Options.downscroll == true)
+			flipY = true;
 
 		var daStage:String = PlayState.curStage;
 
@@ -74,6 +76,8 @@ class Note extends FlxSprite
 					animation.add('greenhold', [2]);
 					animation.add('redhold', [3]);
 					animation.add('bluehold', [1]);
+					if (Options.downscroll == true)
+						flipY = true;
 				}
 
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
@@ -100,6 +104,8 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
+				if(isSustainNote && Options.downscroll == true)
+					flipY = true;
 		}
 
 		switch (noteData)

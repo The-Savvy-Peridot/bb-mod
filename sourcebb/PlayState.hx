@@ -801,8 +801,13 @@ class PlayState extends MusicBeatState
 
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
 		strumLine.scrollFactor.set();
-
+		if (Options.downscroll == true)
+			{
+				strumLine.y = FlxG.height - 165;
+			}
+		strumLine.screenCenter(X);
 		strumLineNotes = new FlxTypedGroup<FlxSprite>();
+		
 		add(strumLineNotes);
 
 		playerStrums = new FlxTypedGroup<FlxSprite>();
@@ -835,6 +840,10 @@ class PlayState extends MusicBeatState
 		FlxG.fixedTimestep = false;
 
 		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
+		if (Options.downscroll == true)
+			{
+				healthBarBG.y = 60;
+			}
 		healthBarBG.screenCenter(X);
 		healthBarBG.scrollFactor.set();
 		add(healthBarBG);
@@ -2043,18 +2052,27 @@ class PlayState extends MusicBeatState
 					daNote.active = true;
 				}
 
-				daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(SONG.speed, 2)));
-
+				if (Options.downscroll == false)
+					{
+						daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(SONG.speed, 2)));
+					}
+				else
+					daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(SONG.speed, 2)));
+					if(daNote.animation.curAnim.name.endsWith('end') && daNote.prevNote != null && Options.downscroll == true)
+						daNote.y += 65;
 				// i am so fucking sorry for this if condition
-				if (daNote.isSustainNote
-					&& daNote.y + daNote.offset.y <= strumLine.y + Note.swagWidth / 2
-					&& (!daNote.mustPress || (daNote.wasGoodHit || (daNote.prevNote.wasGoodHit && !daNote.canBeHit))))
-				{
-					var swagRect = new FlxRect(0, strumLine.y + Note.swagWidth / 2 - daNote.y, daNote.width * 2, daNote.height * 2);
-					swagRect.y /= daNote.scale.y;
-					swagRect.height -= swagRect.y;
+				if (Options.downscroll == false)
+					{
+						if (daNote.isSustainNote
+						&& daNote.y + daNote.offset.y <= strumLine.y + Note.swagWidth / 2
+						&& (!daNote.mustPress || (daNote.wasGoodHit || (daNote.prevNote.wasGoodHit && !daNote.canBeHit))))
+					{
+						var swagRect = new FlxRect(0, strumLine.y + Note.swagWidth / 2 - daNote.y, daNote.width * 2, daNote.height * 2);
+						swagRect.y /= daNote.scale.y;
+						swagRect.height -= swagRect.y;
 
-					daNote.clipRect = swagRect;
+						daNote.clipRect = swagRect;
+					}
 				}
 
 				if (!daNote.mustPress && daNote.wasGoodHit)
@@ -2095,7 +2113,7 @@ class PlayState extends MusicBeatState
 				// WIP interpolation shit? Need to fix the pause issue
 				// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.SONG.speed));
 
-				if (daNote.y < -daNote.height)
+				if (daNote.y < -daNote.height && Options.downscroll == false || daNote.y >= strumLine.y + 106 && Options.downscroll == true)
 				{
 					if (storyWeek == 7 && SONG.song.toLowerCase()!= 'familial-bonds')
 					{
@@ -2212,21 +2230,17 @@ class PlayState extends MusicBeatState
 
 	function waveBye():Void
 	{
-		#if html5
-		var bye:FlxSprite = new FlxSprite(168, 189).loadGraphic(Paths.image('cutscenes/aftermath3'));
-		#end
-		#if desktop
-		var bye:FlxSprite = new FlxSprite(170, 189).loadGraphic(Paths.image('cutscenes/aftermath3'));
-		#end
-			bye.antialiasing = true;
-			camHUD.visible = false;
-			add(bye);
-			new FlxTimer().start(8, function(tmr:FlxTimer)
-			{
-				endSong();
-			});
-			//
-
+		var cutcam:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
+		cutcam.set(0,0);
+		var bye:FlxSprite = new FlxSprite(-240, 160).loadGraphic(Paths.image('cutscenes/aftermath3'));
+		bye.antialiasing = true;
+		camHUD.visible = false;
+		add(bye);
+		new FlxTimer().start(8, function(tmr:FlxTimer)
+		{
+			endSong();
+		});
+		
 	}
 	function endSong():Void
 	{
@@ -2753,7 +2767,7 @@ class PlayState extends MusicBeatState
 				if (note.noteData >= 0)
 					if (storyDifficulty == 2)
 						{
-							health += 0.05;
+							health += 0.03;
 						}
 						else if (storyDifficulty == 1)
 						{
@@ -2801,6 +2815,11 @@ class PlayState extends MusicBeatState
 				notes.remove(note, true);
 				note.destroy();
 			}
+			if (Options.downscroll == true && note.isSustainNote)
+				{
+					note.kill();
+					note.destroy();
+				}
 		}
 	}
 
@@ -2915,7 +2934,7 @@ class PlayState extends MusicBeatState
 
 		if (generatedMusic)
 		{
-			notes.sort(FlxSort.byY, FlxSort.DESCENDING);
+			notes.sort(FlxSort.byY, (FlxG.save.data.downscroll ? FlxSort.ASCENDING : FlxSort.DESCENDING));
 		}
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)

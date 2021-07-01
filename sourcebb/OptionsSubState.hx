@@ -8,8 +8,10 @@ import flixel.util.FlxColor;
 
 class OptionsSubState extends MusicBeatSubstate
 {
-	var textMenuItems:Array<String> = ['Master Volume', 'Sound Volume', 'Controls'];
-
+	var textMenuItems:Array<String> = 
+	['Downscroll', 'DFJK Scheme'];
+	var checkbox:FlxSprite = new FlxSprite(0, 45);
+	var checkbox2:FlxSprite = new FlxSprite(0, 245);
 	var selector:FlxSprite;
 	var curSelected:Int = 0;
 
@@ -18,6 +20,36 @@ class OptionsSubState extends MusicBeatSubstate
 	public function new()
 	{
 		super();
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
+		bg.scale.set(1.1, 1.1);
+		add(bg);
+		checkbox.screenCenter(X);
+		checkbox.x += 80;
+		checkbox.frames = Paths.getSparrowAtlas('optionsCheck');
+		checkbox.animation.addByPrefix('empty', 'Empty Checkbox', 24, false);
+		checkbox.animation.addByPrefix('check', 'Checkmark', 24, false);
+		checkbox.scale.set(0.35, 0.35);
+		if (Options.downscroll == true)
+			{
+				checkbox.animation.play('check', true);
+			}
+		else
+			checkbox.animation.play('empty', true);
+		add(checkbox);
+
+		checkbox2.screenCenter(X);
+		checkbox2.x += 80;
+		checkbox2.frames = Paths.getSparrowAtlas('optionsCheck');
+		checkbox2.animation.addByPrefix('empty', 'Empty Checkbox', 24, false);
+		checkbox2.animation.addByPrefix('check', 'Checkmark', 24, false);
+		checkbox2.scale.set(0.35, 0.35);
+		if (Options.dfjk == true)
+			{
+				checkbox2.animation.play('check', true);
+			}
+		else
+			checkbox2.animation.play('empty', true);
+		add(checkbox2);
 
 		grpOptionsTexts = new FlxTypedGroup<FlxText>();
 		add(grpOptionsTexts);
@@ -27,8 +59,9 @@ class OptionsSubState extends MusicBeatSubstate
 
 		for (i in 0...textMenuItems.length)
 		{
-			var optionText:FlxText = new FlxText(20, 20 + (i * 50), 0, textMenuItems[i], 32);
+			var optionText:FlxText = new FlxText(20, 100 + (i * 200), 0, textMenuItems[i], 32);
 			optionText.ID = i;
+			optionText.screenCenter(X);
 			grpOptionsTexts.add(optionText);
 		}
 	}
@@ -39,9 +72,11 @@ class OptionsSubState extends MusicBeatSubstate
 
 		if (controls.UP_P)
 			curSelected -= 1;
+			//FlxG.sound.play(Paths.sound('scrollMenu'));
 
 		if (controls.DOWN_P)
 			curSelected += 1;
+			//FlxG.sound.play(Paths.sound('scrollMenu'));
 
 		if (curSelected < 0)
 			curSelected = textMenuItems.length - 1;
@@ -61,10 +96,38 @@ class OptionsSubState extends MusicBeatSubstate
 		{
 			switch (textMenuItems[curSelected])
 			{
-				case "Controls":
-					FlxG.state.closeSubState();
-					FlxG.state.openSubState(new ControlsSubState());
+				case "DFJK Scheme":
+					if (Options.dfjk == false)
+						{
+							Options.dfjk = true;
+							checkbox2.animation.play('check', true);
+							PlayerSettings.reset();
+							PlayerSettings.init();
+						}
+					else if (Options.dfjk == true)
+						{
+							Options.dfjk = false;
+							checkbox2.animation.play('empty', true);
+							PlayerSettings.reset();
+							PlayerSettings.init();
+						}
+				case "Downscroll":
+					if (Options.downscroll == false)
+						{
+							Options.downscroll = true;
+							checkbox.animation.play('check', true);
+						}
+					else if (Options.downscroll == true)
+						{
+							Options.downscroll = false;
+							checkbox.animation.play('empty', true);
+						}
+					
 			}
 		}
+		if (controls.BACK)
+			{
+				FlxG.switchState(new MainMenuState());
+			}
 	}
 }

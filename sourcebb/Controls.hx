@@ -83,6 +83,7 @@ enum Control
 enum KeyboardScheme
 {
 	Solo;
+	Dfjk;
 	Duo(first:Bool);
 	None;
 	Custom;
@@ -120,7 +121,6 @@ class Controls extends FlxActionSet
 
 	public var gamepadsAdded:Array<Int> = [];
 	public var keyboardScheme = KeyboardScheme.None;
-
 	public var UP(get, never):Bool;
 
 	inline function get_UP()
@@ -491,7 +491,7 @@ class Controls extends FlxActionSet
 	{
 		if (reset)
 			removeKeyboard();
-
+		
 		keyboardScheme = scheme;
 		
 		#if (haxe >= "4.0.0")
@@ -502,6 +502,15 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.DOWN, [S, FlxKey.DOWN]);
 				inline bindKeys(Control.LEFT, [A, FlxKey.LEFT]);
 				inline bindKeys(Control.RIGHT, [D, FlxKey.RIGHT]);
+				inline bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
+				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
+				inline bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
+				inline bindKeys(Control.RESET, [R]);
+			case Dfjk:
+				inline bindKeys(Control.UP, [J, FlxKey.UP]);
+				inline bindKeys(Control.DOWN, [F, FlxKey.DOWN]);
+				inline bindKeys(Control.LEFT, [D, FlxKey.LEFT]);
+				inline bindKeys(Control.RIGHT, [K, FlxKey.RIGHT]);
 				inline bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
 				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				inline bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
@@ -539,6 +548,15 @@ class Controls extends FlxActionSet
 				bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
 				bindKeys(Control.RESET, [R]);
+			case Dfjk:
+				inline bindKeys(Control.UP, [J, FlxKey.UP]);
+				inline bindKeys(Control.DOWN, [F, FlxKey.DOWN]);
+				inline bindKeys(Control.LEFT, [D, FlxKey.LEFT]);
+				inline bindKeys(Control.RIGHT, [K, FlxKey.RIGHT]);
+				inline bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
+				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
+				inline bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
+				inline bindKeys(Control.RESET, [R]);
 			case Duo(true):
 				bindKeys(Control.UP, [W]);
 				bindKeys(Control.DOWN, [S]);
@@ -562,7 +580,6 @@ class Controls extends FlxActionSet
 		}
 		#end
 	}
-
 	function removeKeyboard()
 	{
 		for (action in this.digitalActions)

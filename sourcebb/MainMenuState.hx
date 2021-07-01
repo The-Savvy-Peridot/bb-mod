@@ -40,7 +40,13 @@ class MainMenuState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
-
+		/*if (Options.dfjk == true)
+			{
+				PlayerSettings.setKeyboardScheme(Dfjk);
+			}
+		else
+			PlayerSettings.setKeyboardScheme(Solo);
+		*/
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
