@@ -29,12 +29,6 @@ class OptionsSubState extends MusicBeatSubstate
 		checkbox.animation.addByPrefix('empty', 'Empty Checkbox', 24, false);
 		checkbox.animation.addByPrefix('check', 'Checkmark', 24, false);
 		checkbox.scale.set(0.35, 0.35);
-		if (Options.downscroll == true)
-			{
-				checkbox.animation.play('check', true);
-			}
-		else
-			checkbox.animation.play('empty', true);
 		add(checkbox);
 
 		checkbox2.screenCenter(X);
@@ -43,14 +37,20 @@ class OptionsSubState extends MusicBeatSubstate
 		checkbox2.animation.addByPrefix('empty', 'Empty Checkbox', 24, false);
 		checkbox2.animation.addByPrefix('check', 'Checkmark', 24, false);
 		checkbox2.scale.set(0.35, 0.35);
+		add(checkbox2);
+		if (Options.downscroll == true)
+			{
+				checkbox.animation.play('check', true);
+			}
+		else
+			checkbox.animation.play('empty', true);
+
 		if (Options.dfjk == true)
 			{
 				checkbox2.animation.play('check', true);
 			}
 		else
 			checkbox2.animation.play('empty', true);
-		add(checkbox2);
-
 		grpOptionsTexts = new FlxTypedGroup<FlxText>();
 		add(grpOptionsTexts);
 
