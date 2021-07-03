@@ -21,7 +21,7 @@ class OptionsSubState extends MusicBeatSubstate
 	{
 		super();
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
-		bg.scale.set(1.1, 1.1);
+		bg.scale.set(1, 1);
 		add(bg);
 		checkbox.screenCenter(X);
 		checkbox.x += 80;
