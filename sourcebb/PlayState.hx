@@ -2147,11 +2147,11 @@ class PlayState extends MusicBeatState
 										}
 										else if (storyDifficulty == 1)
 										{
-											health -= 0.0475;
+											health -= 0.06;
 										}
 										else if (storyDifficulty == 0)
 										{
-											health -= 0.0225;
+											health -= 0.04;
 										}
 										else if (storyDifficulty == 3)
 										{
@@ -2173,11 +2173,11 @@ class PlayState extends MusicBeatState
 									}
 									else if (storyDifficulty == 1)
 									{
-										health -= 0.0475;
+										health -= 0.06;
 									}
 									else if (storyDifficulty == 0)
 									{
-										health -= 0.0225;
+										health -= 0.04;
 									}
 									else if (storyDifficulty == 3)
 									{
