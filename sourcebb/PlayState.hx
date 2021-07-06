@@ -2192,15 +2192,15 @@ class PlayState extends MusicBeatState
 							{
 								if (storyDifficulty == 2)
 								{
-									health -= 0.0475;
+									health -= 0.0875;
 								}
 								else if (storyDifficulty == 1)
 								{
-									health -= 0.0235;
+									health -= 0.0475;
 								}
 								else if (storyDifficulty == 0)
 								{
-									health -= 0.0110;
+									health -= 0.02;
 								}
 								else if (storyDifficulty == 3)
 								{
