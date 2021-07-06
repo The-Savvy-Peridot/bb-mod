@@ -1032,94 +1032,47 @@ class PlayState extends MusicBeatState
 		});
 	}
 	function coolIntro(?dialogueBox:DialogueBox):Void
-	{
-			var cut1:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cutscenes/intro1-1'));
-			cut1.antialiasing = true;
-			camHUD.visible = false;
-			cut1.setGraphicSize(Std.int(cut1.width * 1));
-			cut1.scrollFactor.set();
-			var cut2:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cutscenes/intro1-2'));
-			cut2.antialiasing = true;
-			camHUD.visible = false;
-			cut2.setGraphicSize(Std.int(cut2.width * 1));
-			cut2.scrollFactor.set();
-			var cut3:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cutscenes/intro1-3'));
-			cut3.antialiasing = true;
-			camHUD.visible = false;
-			cut3.setGraphicSize(Std.int(cut3.width * 1));
-			cut3.scrollFactor.set();
-			var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
-			black.scrollFactor.set();
-			var black2:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
-			black2.scrollFactor.set();
-			if (curSong.toLowerCase() == 'familial-bonds')
-			{
+		{
+				var cut1:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cutscenes/intro1-1'));
+				cut1.antialiasing = true;
+				camHUD.visible = false;
+				cut1.setGraphicSize(Std.int(cut1.width * 1));
+				cut1.scrollFactor.set();
+				var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+				black.scrollFactor.set();
+				var black2:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+				black2.scrollFactor.set();
 				add(black2);
 				add(cut1);
 				add(black);
-			}
-			else
-			{
-				add(black2);
-				add(cut3);
-				add(black);
-			}
-			new FlxTimer().start(0.3, function(fade:FlxTimer)
-			{
-				black.alpha -= 0.15;
-	
-				if (black.alpha > 0)
+				new FlxTimer().start(0.3, function(fade:FlxTimer)
 				{
-					fade.reset(0.3);
-				}
-				else if (curSong.toLowerCase() == 'familial-bonds' && black.alpha == 0)
-				{
-					remove(black);
-					new FlxTimer().start(2, function(cutscene1:FlxTimer)
+					black.alpha -= 0.15;
+		
+					if (black.alpha > 0)
 					{
-						remove(cut1);
-						add(cut2);
-						new FlxTimer().start(2, function(cutscene2:FlxTimer)
+						fade.reset(0.3);
+					}
+					else 
+					{
+						remove(black);
+						new FlxTimer().start(1.5, function(dialogue2:FlxTimer)
+						{	
+							if (dialogueBox != null)
 							{
-								remove(cut2);
-								add(cut3);
-								new FlxTimer().start(1, function(dialogue:FlxTimer)
-								{	
-									if (dialogueBox != null)
-									{
-										inCutscene = true;
-										remove(cut3);
-										remove(black2);
-										add(dialogueBox);
-									}
-									else
-										startCountdown();
-										camHUD.visible = true;
-								});
-							});
-					});
-
-				}
-				else 
-				{
-					remove(black);
-					new FlxTimer().start(1.5, function(dialogue2:FlxTimer)
-					{	
-						if (dialogueBox != null)
-						{
-							inCutscene = true;
-							remove(cut3);
-							remove(black2);
-							add(dialogueBox);							
-						}
-						else
-							startCountdown();
-							camHUD.visible = true;
-					});
-				}
-			});
-
-	}
+								inCutscene = true;
+								remove(cut1);
+								remove(black2);
+								add(dialogueBox);
+							}
+							else
+								startCountdown();
+								camHUD.visible = true;
+						});
+					}
+				});
+	
+		}
 	function coolIntroAgain(?dialogueBox:DialogueBox):Void
 		{
 				var cut3:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cutscenes/intro1-3'));
@@ -1979,7 +1932,7 @@ class PlayState extends MusicBeatState
 						case 159:
 							canPause = false;
 							remove(dad);
-							dad = new Character(150, 70, 'bb-youwin');
+							dad = new Character(150, 80, 'bb-youwin');
 							add(dad);
 							dad.playAnim('tapout', true);
 							canPause = true;
@@ -2123,11 +2076,11 @@ class PlayState extends MusicBeatState
 								{
 									if (storyDifficulty == 2)
 										{
-											health -= 0.0475;
+											health -= 0.055;
 										}
 										else if (storyDifficulty == 1)
 										{
-											health -= 0.0225;
+											health -= 0.03;
 										}
 										else if (storyDifficulty == 0)
 										{
@@ -2143,11 +2096,11 @@ class PlayState extends MusicBeatState
 								{
 									if (storyDifficulty == 2)
 										{
-											health -= 0.0950;
+											health -= 0.01;
 										}
 										else if (storyDifficulty == 1)
 										{
-											health -= 0.06;
+											health -= 0.07;
 										}
 										else if (storyDifficulty == 0)
 										{
@@ -2169,11 +2122,11 @@ class PlayState extends MusicBeatState
 								{
 									if (storyDifficulty == 2)
 									{
-										health -= 0.0950;
+										health -= 0.1;
 									}
 									else if (storyDifficulty == 1)
 									{
-										health -= 0.06;
+										health -= 0.07;
 									}
 									else if (storyDifficulty == 0)
 									{
@@ -2230,17 +2183,7 @@ class PlayState extends MusicBeatState
 
 	function waveBye():Void
 	{
-		var cutcam:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
-		cutcam.set(0,0);
-		var bye:FlxSprite = new FlxSprite(-240, 160).loadGraphic(Paths.image('cutscenes/aftermath3'));
-		bye.antialiasing = true;
-		camHUD.visible = false;
-		add(bye);
-		new FlxTimer().start(8, function(tmr:FlxTimer)
-		{
-			endSong();
-		});
-		
+		endSong();	
 	}
 	function endSong():Void
 	{

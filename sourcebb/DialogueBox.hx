@@ -436,7 +436,7 @@ class DialogueBox extends FlxSpriteGroup
 				swagDialogue.alpha = 0;
 		}
 
-		whitelisted = ['chromeoffset', 'soundoverwritestop', 'musicstop', 'music', 'musicloop', 'soundoverwrite', 'sound', 'class', 'class-use', 'bg', 'bghide', 'makeGraphic', 'enableTypeSound', 'disableTypeSound', 'switchSound', 'fadeIn', 'fadeOut'];
+		whitelisted = ['pause', 'hidebox', 'showbox', 'chromeoffset', 'soundoverwritestop', 'musicstop', 'music', 'musicloop', 'soundoverwrite', 'sound', 'class', 'class-use', 'bg', 'bghide', 'makeGraphic', 'enableTypeSound', 'disableTypeSound', 'switchSound', 'fadeIn', 'fadeOut'];
 
 		//if ((FlxG.keys.justPressed.ANY) || (dialogueList.length > 0 && whitelisted.contains(curCharacter)) && dialogueStarted == true && !paused && !isFade)
 		if ((controls.ACCEPT) || (dialogueList.length > 0 && whitelisted.contains(curCharacter)) && dialogueStarted == true && !paused && !isFade)
@@ -473,11 +473,10 @@ class DialogueBox extends FlxSpriteGroup
 						//curSound.volume = FlxG.sound.volume;
 						curSound.play();
 					}
-				case 'musicstop':
-					if (FlxG.sound.music.playing)
-					{
-						FlxG.sound.music.stop();
-					}
+				case 'hidebox':
+					box.visible = false;
+				case 'showbox':
+					box.visible = true;
 				case 'soundoverwritestop':
 					if (curSound != null && curSound.playing)
 					{
@@ -556,11 +555,37 @@ class DialogueBox extends FlxSpriteGroup
 						}
 					}
 				case 'pause':
-					new FlxTimer().start(3, function(tmr:FlxTimer)
+					paused = true;
+					dropText.visible = false;
+					box.visible = false;
+					swagDialogue.visible = false;
+					new FlxTimer().start(2, function(tmr:FlxTimer)
 					if (1 == 1)
 						{
 							daBg.visible = true;
+							paused = false;
+							dropText.visible = true;
+							box.visible = true;
+							swagDialogue.visible = true;
+							dialogueList.remove(dialogueList[0]);
+							startDialogue();
 						});
+				case 'end':
+					{
+						paused = true;
+						dropText.visible = false;
+						box.visible = false;
+						swagDialogue.visible = false;
+						new FlxTimer().start(6, function(tmr:FlxTimer)
+						if (1 == 1)
+							{
+								daBg.visible = true;
+								paused = false;
+								camera.fill(FlxColor.TRANSPARENT);
+								finishThing();
+								kill();
+							});
+					}
 				case 'fadeColor':
 					var ourArr:Array<Int> = [];
 					var tempShit:Array<String> = new EReg(",", "g").split(dialogueList[0]);
