@@ -2202,7 +2202,7 @@ class PlayState extends MusicBeatState
 			campaignScore += songScore;
 			storyPlaylist.remove(storyPlaylist[0]);
 
-			if (storyPlaylist.length <= 0)
+			if (storyPlaylist.length <= 0 || SONG.song.toLowerCase() == 'heartache' && storyDifficulty == 3)
 			{
 
 				FlxG.sound.playMusic(Paths.music('freakyMenu'));
